@@ -108,7 +108,6 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mb-12 sm:mb-16">
-            >
               <Button href="/about" size="lg" variant="primary" className="group w-full sm:w-auto">
                 <span className="text-sm sm:text-base">Explore the Journey</span>
               </Button>
