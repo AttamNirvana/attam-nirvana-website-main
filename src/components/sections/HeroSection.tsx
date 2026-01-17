@@ -97,7 +97,6 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl text-light-text leading-relaxed mb-8 sm:mb-10 max-w-3xl mx-auto">
-            >
               A transformative journey designed to help women break free from trauma, 
               cultural conditioning, and self-doubt. Discover your power with 
               personalized guidance from <span className="text-white font-medium">Rupinder Dhillon</span>.
