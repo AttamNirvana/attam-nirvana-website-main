@@ -9,27 +9,17 @@ interface AnimatedSectionProps {
   delay?: number
 }
 
-export function FadeInUp({ children, className, delay = 0 }: AnimatedSectionProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
+/**
+ * FadeIn - Simple opacity fade animation
+ * Premium minimalist approach using only opacity transitions
+ */
 export function FadeIn({ children, className, delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.8, delay, ease: 'easeOut' }}
+      transition={{ duration: 0.5, delay, ease: 'easeOut' }}
       className={className}
     >
       {children}
@@ -37,38 +27,14 @@ export function FadeIn({ children, className, delay = 0 }: AnimatedSectionProps)
   )
 }
 
-export function SlideInLeft({ children, className, delay = 0 }: AnimatedSectionProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-export function SlideInRight({ children, className, delay = 0 }: AnimatedSectionProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
+/**
+ * ScaleIn - Subtle scale with fade animation
+ * Premium feel with minimal movement
+ */
 export function ScaleIn({ children, className, delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay, ease: 'easeOut' }}
@@ -85,6 +51,10 @@ interface StaggerContainerProps {
   staggerDelay?: number
 }
 
+/**
+ * StaggerContainer - Container for staggered child animations
+ * Used for lists and grids
+ */
 export function StaggerContainer({ children, className, staggerDelay = 0.1 }: StaggerContainerProps) {
   return (
     <motion.div
@@ -105,12 +75,16 @@ export function StaggerContainer({ children, className, staggerDelay = 0.1 }: St
   )
 }
 
+/**
+ * StaggerItem - Individual item for stagger animations
+ * Simple opacity and scale only
+ */
 export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, scale: 0.98 },
+        visible: { opacity: 1, scale: 1 },
       }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={className}
@@ -120,40 +94,7 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
   )
 }
 
-// Floating animation for decorative elements
-export function FloatingElement({ children, className, duration = 6 }: AnimatedSectionProps & { duration?: number }) {
-  return (
-    <motion.div
-      animate={{
-        y: [0, -20, 0],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-// Pulse animation for CTAs
-export function PulseElement({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <motion.div
-      animate={{
-        scale: [1, 1.02, 1],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
+// Legacy exports for backwards compatibility - all use simplified animations now
+export const FadeInUp = FadeIn;
+export const SlideInLeft = FadeIn;
+export const SlideInRight = FadeIn;

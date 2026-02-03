@@ -7,23 +7,7 @@ import { Heart, ArrowRight, Shield, Clock, Sparkles } from 'lucide-react'
 
 export default function CTASection() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-primary-800" />
-      
-      {/* Decorative Elements - Static */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        
-        {/* Subtle grid */}
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
-        
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"
-        />
-      </div>
+    <section className="relative py-12 sm:py-24 overflow-hidden">
 
       <div className="container-main relative z-10 w-full max-w-5xl mx-auto">
         {/* Main CTA Content - Mobile Responsive */}
@@ -31,11 +15,8 @@ export default function CTASection() {
             {/* Left Content - Mobile Optimized */}
             <div className="lg:col-span-7 text-center lg:text-left">
               <FadeInUp>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-poppins font-bold text-white mb-4 sm:mb-5 leading-tight">
-                  Ready to Reclaim Your{' '}
-                  <span className="text-accent-purple">
-                    Power
-                  </span>?
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] mb-5 leading-tight">
+                  Ready to Reclaim Your Power?
                 </h2>
               </FadeInUp>
 

@@ -1,6 +1,6 @@
 # Aattam Nirvana - Trauma Healing & Empowerment Website
 
-A beautiful, modern Next.js website for Rupinder Dhillon's trauma healing and women empowerment practice.
+A beautiful, modern Next.js website for Rupi Dhillon's trauma healing and women empowerment practice.
 
 ## 🌟 Features
 

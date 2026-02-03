@@ -26,7 +26,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-800 text-white">
+    <footer className="bg-primary-700 text-white">
       {/* Main Footer Content - Mobile Responsive */}
       <div className="container-main py-10 sm:py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 lg:gap-8">
@@ -42,10 +42,10 @@ export default function Footer() {
                 />
               </div>
               <span className="text-lg sm:text-xl font-poppins font-bold">
-                Aattam<span className="text-primary-400">Nirvana</span>
+                Aattam<span className="text-white">Nirvana</span>
               </span>
             </Link>
-            <p className="text-light-text text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 md:mb-6">
+            <p className="text-white/90 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 md:mb-6">
               Empowering women to break free from trauma, cultural conditioning, and self-doubt. 
               Your journey to healing and self-discovery starts here.
             </p>
@@ -58,7 +58,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center
-                           transition-all duration-300 hover:bg-primary-500 hover:scale-110"
+                           transition-all duration-300 hover:bg-white hover:text-primary-700 hover:scale-110"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-light-text text-xs sm:text-sm hover:text-white transition-colors duration-300
+                    className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors duration-300
                              hover:translate-x-1 inline-block"
                   >
                     {link.label}
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-light-text text-xs sm:text-sm hover:text-white transition-colors duration-300
+                    className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors duration-300
                              hover:translate-x-1 inline-block"
                   >
                     {link.label}

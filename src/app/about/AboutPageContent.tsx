@@ -9,8 +9,7 @@ import {
   SlideInLeft, 
   SlideInRight, 
   StaggerContainer, 
-  StaggerItem,
-  FloatingElement 
+  StaggerItem
 } from '@/components/animations'
 import { 
   Heart, 
@@ -81,18 +80,7 @@ export default function AboutPageContent() {
   return (
     <>
       {/* Hero Section - Editorial Style - Mobile Responsive */}
-      <section className="relative min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] bg-primary-800 overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16">
-        {/* Background Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <FloatingElement className="absolute top-20 right-20 w-80 h-80 rounded-full bg-accent-purple/15 blur-3xl">
-            <div />
-          </FloatingElement>
-          <FloatingElement className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-primary-500/15 blur-3xl" duration={8}>
-            <div />
-          </FloatingElement>
-          <div className="absolute inset-0 opacity-[0.03]" 
-               style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
-        </div>
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] bg-primary-700 overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-24">
 
         <div className="container-main relative z-10">
           <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 items-center">
@@ -167,7 +155,7 @@ export default function AboutPageContent() {
               <div className="relative aspect-[3/4] max-w-[280px] sm:max-w-sm md:max-w-md mx-auto lg:ml-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-hero border-2 sm:border-4 border-white/20">
                 <Image
                   src={profileImg}
-                  alt="Rupinder Dhillon - Rupi"
+                  alt="Rupi Dhillon - Rupi"
                   fill
                   className="object-cover"
                   priority
@@ -198,7 +186,7 @@ export default function AboutPageContent() {
                   <div className="inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 bg-primary-900/50 border border-primary-700 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-4 sm:mb-5 md:mb-6">
                     <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-accent-purple" />
                     <div>
-                      <p className="text-base sm:text-lg md:text-xl font-poppins font-bold text-white">Rupinder Dhillon</p>
+                      <p className="text-base sm:text-lg md:text-xl font-poppins font-bold text-white">Rupi Dhillon</p>
                       <p className="text-sm text-accent-purple font-medium">fondly known as Rupi</p>
                     </div>
                   </div>
@@ -546,22 +534,7 @@ export default function AboutPageContent() {
       </section>
 
       {/* Final CTA - Enhanced Design */}
-      <section className="py-10 sm:py-12 md:py-14 bg-primary-800 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <FloatingElement className="absolute top-10 right-10 w-64 h-64 rounded-full bg-accent-purple/20 blur-3xl">
-            <div />
-          </FloatingElement>
-          <FloatingElement className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-primary-500/20 blur-3xl" duration={7}>
-            <div />
-          </FloatingElement>
-          <div className="absolute inset-0 opacity-[0.03]" 
-               style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '50px 50px'}} />
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-white/5 rounded-full"
-          />
-        </div>
+      <section className="py-12 sm:py-16 md:py-24 bg-primary-700 relative overflow-hidden">
 
         <div className="container-main relative z-10">
           <div className="max-w-4xl mx-auto">

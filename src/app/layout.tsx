@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import { Header, Footer, LenisProvider } from '@/components/layout'
 import CookieConsent from '@/components/layout/CookieConsent'
 
 const poppins = Poppins({
@@ -20,10 +19,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Aattam Nirvana | Rupinder Dhillon - Trauma Healing & Empowerment',
-  description: 'Transform your life with Rupinder Dhillon. A 12-week program to break free from trauma, domestic abuse, and cultural conditioning. Reclaim your voice and inner strength.',
-  keywords: ['trauma healing', 'domestic abuse recovery', 'women empowerment', 'life coaching', 'Rupinder Dhillon', 'Aattam Nirvana'],
-  authors: [{ name: 'Rupinder Dhillon' }],
+  title: 'Aattam Nirvana | Rupi Dhillon - Trauma Healing & Empowerment',
+  description: 'Transform your life with Rupi Dhillon. A 12-week program to break free from trauma, domestic abuse, and cultural conditioning. Reclaim your voice and inner strength.',
+  keywords: ['trauma healing', 'domestic abuse recovery', 'women empowerment', 'life coaching', 'Rupi Dhillon', 'Aattam Nirvana'],
+  authors: [{ name: 'Rupi Dhillon' }],
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -44,11 +43,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <body className="font-inter custom-scrollbar">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+      <body className="font-inter">
+        <LenisProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CookieConsent />
+        </LenisProvider>
       </body>
     </html>
   )

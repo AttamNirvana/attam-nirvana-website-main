@@ -30,25 +30,19 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 bg-primary-800 overflow-hidden">
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" 
-           style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
+    <section className="relative py-12 sm:py-24 overflow-hidden">
 
       <div className="container-main relative z-10 w-full max-w-7xl mx-auto">
         {/* Section Header - Mobile Optimized */}
         <FadeInUp>
           <div className="max-w-3xl mb-8 sm:mb-10 md:mb-12">
-            <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
-              <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-            <p className="text-accent-purple font-semibold text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-2">
-                Testimonials
-              </p>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-poppins font-bold text-white leading-tight mb-4 sm:mb-5">
+            <p className="text-white/90 font-semibold text-xs uppercase tracking-[0.2em] mb-3">
+              Testimonials
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] leading-tight mb-5">
               Stories of Transformation
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl">
               Real women sharing their journeys of healing, growth, and reclaiming their power.
             </p>
           </div>
@@ -64,18 +58,15 @@ export default function TestimonialsSection() {
                 transition={{ duration: 0.3 }}
                 className="relative h-full"
               >
-                <div className="bg-primary-600 
-                              rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-white h-full shadow-purple-lg relative overflow-hidden">
-                  {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-purple/20 rounded-full blur-3xl" />
+                <div className="bg-primary-800 
+                              rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 text-white h-full shadow-xl relative overflow-hidden">
 
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Badge - Mobile Responsive */}
                     <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 
                                   px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4 md:mb-5">
-                      <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-accent-gold fill-current" />
+                      <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#ffd966] fill-current" />
                       <span className="text-[10px] sm:text-xs font-semibold">Featured Story</span>
                     </div>
 
@@ -88,7 +79,7 @@ export default function TestimonialsSection() {
                     {/* Rating - Mobile Responsive */}
                     <div className="flex gap-0.5 mb-3 sm:mb-4 md:mb-5">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-accent-gold fill-current" />
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#ffd966] fill-current" />
                       ))}
                     </div>
 
@@ -125,7 +116,7 @@ export default function TestimonialsSection() {
                   {/* Rating - Mobile Responsive */}
                   <div className="flex gap-0.5 mb-2.5 sm:mb-3">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-gold fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ffd966] fill-current" />
                     ))}
                   </div>
 
@@ -171,12 +162,12 @@ export default function TestimonialsSection() {
                 className="text-center p-4 bg-primary-900/30 rounded-xl border border-primary-700"
               >
                 <div className="flex items-center justify-center gap-1.5 mb-1.5">
-                  {stat.icon && <stat.icon className="w-4 h-4 text-accent-gold fill-current" />}
-                  <p className="text-2xl md:text-3xl font-bold text-primary-600 font-poppins">
+                  {stat.icon && <stat.icon className="w-4 h-4 text-[#ffd966] fill-current" />}
+                  <p className="text-2xl md:text-3xl font-bold text-white font-poppins">
                     {stat.value}
                   </p>
                 </div>
-                <p className="text-xs text-gray-600">{stat.label}</p>
+                <p className="text-xs text-white/70">{stat.label}</p>
               </motion.div>
             ))}
           </div>

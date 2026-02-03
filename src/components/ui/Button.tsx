@@ -28,29 +28,30 @@ export default function Button({
   const baseStyles = `
     inline-flex items-center justify-center gap-2 font-semibold rounded-lg
     transition-all duration-300 ease-out
-    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
   `
 
   const variants = {
     primary: `
-      bg-primary-600 text-white
-      hover:bg-primary-500 hover:shadow-purple-md hover:-translate-y-0.5
-      active:translate-y-0
+      bg-primary-700 text-white
+      hover:scale-[1.02] hover:shadow-lg
+      active:scale-[0.98]
     `,
     secondary: `
-      bg-transparent text-primary-600 border-2 border-primary-600
-      hover:bg-primary-600 hover:text-white hover:shadow-purple-sm hover:-translate-y-0.5
-      active:translate-y-0
+      bg-white text-primary-700 border-2 border-primary-700
+      hover:scale-[1.02] hover:shadow-lg
+      active:scale-[0.98]
     `,
     outline: `
       bg-transparent text-white border-2 border-white
-      hover:bg-white hover:text-primary-900 hover:-translate-y-0.5
-      active:translate-y-0
+      hover:bg-white hover:text-primary-700 hover:scale-[1.02]
+      active:scale-[0.98]
     `,
     ghost: `
-      bg-transparent text-primary-600
-      hover:bg-primary-100 hover:text-primary-700
+      bg-transparent text-primary-700
+      hover:bg-primary-100
+      active:bg-primary-200
     `,
   }
 

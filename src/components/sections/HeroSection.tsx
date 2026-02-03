@@ -1,141 +1,182 @@
 'use client'
 
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
-import { Sparkles, Brain, Heart, User } from 'lucide-react'
-import heroBg from '@/assets/hero-bg.jpg'
+import LightRays from '@/components/effects/LightRays'
+
+// Animation variants for staggered text reveal
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const lineVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 30,
+    filter: 'blur(10px)',
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+const fadeUpVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20,
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+}
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src={heroBg}
-          alt="Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Dark tint overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-primary-800/60" />
-      </div>
-      
-      {/* Background Decorative Elements with Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-        {/* Cosmic glow effects */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-accent-purple/20 rounded-full blur-[120px]" />
-        <div className="absolute top-40 right-32 w-80 h-80 bg-accent-cyan/15 rounded-full blur-[100px]" />
-        <div className="absolute bottom-32 left-1/3 w-72 h-72 bg-pink-500/15 rounded-full blur-[100px]" />
-        
-        {/* Floating Icons */}
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-32 left-[15%] text-accent-cyan/40"
-        >
-          <Brain className="w-16 h-16 sm:w-20 sm:h-20" strokeWidth={1.5} />
-        </motion.div>
-        
-        <motion.div
-          animate={{ 
-            y: [0, -25, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute top-40 right-[18%] text-accent-purple/40"
-        >
-          <User className="w-14 h-14 sm:w-18 sm:h-18" strokeWidth={1.5} />
-        </motion.div>
-        
-        <motion.div
-          animate={{ 
-            y: [0, -15, 0],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          className="absolute top-24 right-[35%] text-pink-400/40"
-        >
-          <Heart className="w-12 h-12 sm:w-16 sm:h-16" strokeWidth={1.5} />
-        </motion.div>
-      </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
 
-      <div className="container-main relative z-20 w-full py-12 sm:py-16 md:py-20">
-        {/* Asymmetric Layout with Floating Cards */}
+      <div className="container-main relative z-20 w-full py-12 sm:py-24">
+        {/* Content - Centered */}
         <div className="flex justify-center items-center max-w-7xl mx-auto">
-          {/* Content */}
-          <div className="text-center mt-12 sm:mt-16 md:mt-20">
-            {/* Headline with Editorial Typography */}
+          <div className="text-center">
+            {/* Headline with staggered animation */}
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-poppins font-bold text-white leading-[1.1] mb-6 sm:mb-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-poppins leading-[1.1] mb-8 sm:mb-10"
             >
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 sm:mb-3">
-                Reclaim Your Inner
-              </span>
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 sm:mb-3">
-                Strength{' '}
-                <span className="text-white/90">&</span>{' '}
-                <span className="text-accent-purple">
-                  Find Your True
-                </span>
-              </span>
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-accent-purple">
-                Self
-              </span>
+              {/* Line 1 */}
+              <motion.span 
+                variants={lineVariants}
+                className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3"
+              >
+                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer" style={{backgroundSize: '200% auto'}}>Reclaim Your Inner Strength</span>
+              </motion.span>
+              
+              {/* Line 2 */}
+              <motion.span 
+                variants={lineVariants}
+                className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+              >
+                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer" style={{backgroundSize: '200% auto'}}>& Find Your True Self</span>
+              </motion.span>
             </motion.h1>
 
+            {/* Decorative line */}
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-[#ffd966] to-transparent mx-auto mb-8 sm:mb-10"
+            />
+
+            {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-light-text leading-relaxed mb-8 sm:mb-10 max-w-3xl mx-auto">
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1.2 }}
+              className="text-base md:text-lg text-white/85 leading-relaxed mb-10 sm:mb-14 max-w-2xl mx-auto font-light"
+            >
               A transformative journey designed to help women break free from trauma, 
               cultural conditioning, and self-doubt. Discover your power with 
-              personalized guidance from <span className="text-white font-medium">Rupinder Dhillon</span>.
+              personalized guidance from <span className="text-[#ffd966] font-semibold">Rupi Dhillon</span>.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs with enhanced styling */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mb-12 sm:mb-16">
-              <Button href="/about" size="lg" variant="primary" className="group w-full sm:w-auto">
-                <span className="text-sm sm:text-base">Explore the Journey</span>
-              </Button>
-              <Button href="/book-session" variant="outline" size="lg" className="w-full sm:w-auto">
-                <span className="text-sm sm:text-base">Book a Session</span>
-              </Button>
-            </motion.div>
-
-            {/* Social Proof - Hidden for cleaner design matching reference */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-3 gap-2 sm:gap-3 max-w-md mx-auto">
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1.4 }}
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
             >
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-2 sm:p-3 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">500+</p>
-                <p className="text-[9px] sm:text-[10px] text-light-text leading-tight">Lives Transformed</p>
-              </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-2 sm:p-3 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">27+</p>
-                <p className="text-[9px] sm:text-[10px] text-light-text leading-tight">Years Insight</p>
-              </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-2 sm:p-3 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">12</p>
-                <p className="text-[9px] sm:text-[10px] text-light-text leading-tight">Week Program</p>
-              </div>
-            </motion.div> */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ 
+                  y: [0, -5, 0],
+                  boxShadow: [
+                    '0 10px 30px rgba(184, 134, 11, 0.3)',
+                    '0 15px 40px rgba(184, 134, 11, 0.5)',
+                    '0 10px 30px rgba(184, 134, 11, 0.3)'
+                  ]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <Button 
+                  href="/about" 
+                  size="lg" 
+                  variant="primary" 
+                  className="group w-full sm:w-auto btn-shine bg-gradient-to-r from-[#b8860b] via-[#c99a1d] to-[#b8860b] hover:from-[#c99a1d] hover:via-[#b8860b] hover:to-[#c99a1d] text-white font-semibold shadow-lg transition-all duration-300 relative overflow-hidden"
+                >
+                  <span className="flex items-center gap-2 relative z-10">
+                    <span>Explore the Journey</span>
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                  />
+                </Button>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ 
+                  y: [0, -5, 0],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.3
+                }}
+              >
+                <Button 
+                  href="/book-session" 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full sm:w-auto border-2 border-[#b8860b] text-white bg-[#b8860b]/10 hover:bg-[#b8860b]/20 hover:border-[#c99a1d] backdrop-blur-sm transition-all duration-300 font-semibold shadow-lg shadow-[#b8860b]/20 relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Book a Session</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent"
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+                  />
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -144,7 +185,7 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div

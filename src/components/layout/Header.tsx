@@ -43,13 +43,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-3 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-lg shadow-purple-sm py-2 sm:py-3'
-          : 'bg-transparent py-3 sm:py-5'
+          ? 'shadow-md'
+          : ''
       } ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
+      style={{
+        background: 'rgba(116, 38, 210, 0.7)',
+        WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+        backdropFilter: 'blur(24px) saturate(180%)',
+        boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+      }}
     >
       <div className="container-main">
         <nav className="flex items-center justify-between">
@@ -66,11 +72,10 @@ export default function Header() {
               <div className="absolute -inset-1 bg-primary-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <span
-              className={`text-lg sm:text-2xl font-poppins font-extrabold tracking-tight transition-colors duration-300 ${
-                isScrolled ? 'text-primary-900' : 'text-white'
-              }`}
+              className="text-lg sm:text-2xl font-poppins font-extrabold tracking-tight text-white transition-colors duration-300"
+              style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2)' }}
             >
-              Aattam<span className="text-primary-500">Nirvana</span>
+              AattamNirvana
             </span>
           </Link>
 
@@ -80,11 +85,8 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-lg font-bold tracking-tight transition-colors duration-300 link-hover ${
-                  isScrolled
-                    ? 'text-dark-text hover:text-primary-600'
-                    : 'text-white hover:text-white'
-                }`}
+                className="relative text-lg font-bold tracking-tight text-white hover:text-white/80 transition-all duration-300"
+                style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.4)' }}
               >
                 {link.label}
               </Link>
@@ -95,9 +97,11 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className={`btn-primary text-xs sm:text-sm ${
-                !isScrolled && 'bg-white text-primary-900 hover:bg-primary-100'
-              }`}
+              className="btn-primary text-xs sm:text-sm bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all duration-300"
+              style={{ 
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+              }}
             >
               GET IN TOUCH
             </Link>
@@ -106,9 +110,7 @@ export default function Header() {
           {/* Mobile Menu Button - Enhanced touch target */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2.5 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
-              isScrolled ? 'text-dark-text' : 'text-white'
-            }`}
+            className="md:hidden p-2.5 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center text-white"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -136,9 +138,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2.5 px-2 text-base sm:text-lg font-medium transition-colors rounded-lg min-h-[44px] flex items-center ${
-                        isScrolled ? 'text-dark-text' : 'text-white'
-                      } hover:text-primary-500 hover:bg-primary-50/10`}
+                      className="block py-2.5 px-2 text-base sm:text-lg font-medium transition-colors rounded-lg min-h-[44px] flex items-center text-white hover:text-white/80 hover:bg-white/10"
+                      style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}
                     >
                       {link.label}
                     </Link>

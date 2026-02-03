@@ -6,6 +6,4 @@ export {
   ScaleIn,
   StaggerContainer,
   StaggerItem,
-  FloatingElement,
-  PulseElement,
 } from './AnimatedSection'

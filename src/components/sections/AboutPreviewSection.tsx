@@ -9,20 +9,17 @@ import profileImg from '@/assets/profile.jpg'
 
 export default function AboutPreviewSection() {
   return (
-    <section className="relative py-10 sm:py-12 md:py-14 bg-primary-800 overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" 
-           style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
+    <section className="relative py-12 sm:py-24 overflow-hidden">
 
       <div className="container-main relative z-10 w-full max-w-7xl mx-auto">
         {/* Section Header - Editorial Style - Mobile Optimized */}
         <FadeInUp className="mb-6 sm:mb-7 md:mb-8">
           <div className="max-w-2xl">
-            <p className="text-accent-purple font-semibold text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-2">
+            <p className="text-white/90 font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               The Story Behind Aattam
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-poppins font-bold text-white leading-tight">
-              From <span className="text-accent-purple">Darkness</span> to Light
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] leading-tight">
+              From Darkness to Light
             </h2>
           </div>
         </FadeInUp>
@@ -36,7 +33,7 @@ export default function AboutPreviewSection() {
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-hero">
                 <Image
                   src={profileImg}
-                  alt="Rupinder Dhillon - Rupi"
+                  alt="Rupi Dhillon"
                   fill
                   className="object-cover"
                 />
@@ -70,69 +67,69 @@ export default function AboutPreviewSection() {
             </div>
           </SlideInLeft>
 
-          {/* Right Column - Content with Creative Typography - Mobile Optimized */}
+          {/* Right Column - Content - Mobile Optimized */}
           <SlideInRight className="lg:col-span-8">
-            <div className="space-y-3 sm:space-y-4 md:space-y-5">
-              {/* Name Badge - Mobile Responsive */}
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-primary-900/50 border border-primary-700 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-purple" />
+            <div className="space-y-4 md:space-y-5">
+              {/* Name Badge */}
+              <div className="inline-flex items-center gap-2 bg-primary-800 border border-primary-600 rounded-full px-4 py-2">
+                <Sparkles className="w-4 h-4 text-white" />
                 <div>
-                  <p className="text-sm sm:text-base font-poppins font-bold text-white">Rupinder Dhillon</p>
-                  <p className="text-[10px] sm:text-xs text-accent-purple font-medium">fondly known as Rupi</p>
+                  <p className="text-base font-poppins font-bold text-white">Rupi Dhillon</p>
+                  <p className="text-xs text-white/90 font-medium">fondly known as Rupi</p>
                 </div>
               </div>
 
-              {/* Role Tag - Mobile Responsive */}
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-primary-900/50 text-white rounded-full text-[10px] sm:text-xs font-semibold">
+              {/* Role Tags */}
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-primary-800 text-white rounded-full text-xs font-semibold">
                   Trauma Healing Coach
                 </span>
-                <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-primary-900/50 text-white rounded-full text-[10px] sm:text-xs font-semibold">
+                <span className="px-3 py-1.5 bg-primary-800 text-white rounded-full text-xs font-semibold">
                   Survivor Advocate
                 </span>
               </div>
 
-              {/* Story Text - Mobile Responsive */}
-              <div className="space-y-3 sm:space-y-4 text-white/80 leading-relaxed">
-                <p className="text-sm sm:text-base md:text-lg">
-                  For over <span className="font-bold text-accent-purple">27 years</span>, I endured 
+              {/* Story Text */}
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p className="text-base md:text-lg">
+                  For over <span className="font-bold text-white">27 years</span>, I endured 
                   the harrowing trials of domestic violence and emotional, verbal, and psychological abuse.
                 </p>
                 
-                <p className="text-xs sm:text-sm md:text-base">
+                <p className="text-sm md:text-base">
                   Despite the dark times and the constant undermining of my worth and intelligence, 
-                  I wore a <span className="italic text-accent-purple">mask of contentment</span> and 
+                  I wore a <span className="italic text-white">mask of contentment</span> and 
                   became a people pleaser, sacrificing my dreams and living life on others' terms.
                 </p>
 
-                <p className="text-xs sm:text-sm md:text-base">
-                  At the age of <span className="font-bold text-accent-purple">51</span>, with unwavering 
+                <p className="text-sm md:text-base">
+                  At the age of <span className="font-bold text-white">51</span>, with unwavering 
                   support from a mentor and compassionate network, I embarked on a 
-                  <span className="font-semibold text-accent-purple"> transformative journey of healing 
+                  <span className="font-semibold text-white"> transformative journey of healing 
                   and self-discovery</span>.
                 </p>
               </div>
 
-              {/* Pull Quote - Mobile Responsive */}
+              {/* Pull Quote */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative pl-4 sm:pl-5 py-2.5 sm:py-3 border-l-3 border-accent-purple bg-primary-900/50 rounded-r-lg"
+                transition={{ duration: 0.5 }}
+                className="relative pl-5 py-3 border-l-4 border-white bg-primary-800 rounded-r-lg"
               >
-                <Heart className="absolute -left-2 sm:-left-2.5 top-2.5 sm:top-3 w-4 h-4 sm:w-5 sm:h-5 text-accent-purple fill-current bg-primary-900 rounded-full" />
-                <p className="italic text-white text-xs sm:text-sm md:text-base font-medium leading-relaxed">
+                <Heart className="absolute -left-2.5 top-3 w-5 h-5 text-white fill-current bg-primary-700 rounded-full" />
+                <p className="italic text-white text-sm md:text-base font-medium leading-relaxed">
                   "From the ashes of my past, I have risen like a phoenix, ready to soar. 
                   My journey is proof that healing is possible and that freedom awaits."
                 </p>
               </motion.div>
 
-              {/* CTA - Mobile Responsive */}
-              <div className="pt-2 sm:pt-3">
+              {/* CTA */}
+              <div className="pt-3">
                 <Button href="/about" size="md" className="group w-full sm:w-auto">
-                  <span className="text-xs sm:text-sm">DISCOVER MY FULL JOURNEY</span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                  <span>DISCOVER MY FULL JOURNEY</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </div>
