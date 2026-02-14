@@ -1,0 +1,104 @@
+{
+  "page_meta": {
+    "title": "About Rupi Dhillon | The Trauma Liberator",
+    "theme": "Dark Luxury Minimalist",
+    "primary_color": "#6e1fd2",
+    "background_color": "#050505"
+  },
+  "hero_section": {
+    "tagline": "From Silence to Self-Liberation",
+    "headline": "I am the woman who chose her own light.",
+    "sub_headline": "Trauma Liberator. Heart-Led Facilitator. Soulful Guide.",
+    "description": "I chose healing so my daughters could inherit freedom rather than carry wounds. I found my way back home to my true self.",
+    "image_alt": "Rupi Dhillon portrait, radiating calm strength"
+  },
+  "narrative_arc": [
+    {
+      "id": "roots",
+      "title": "The Roots",
+      "content": "My story begins in India, raised in a loving Joint Punjabi family rooted in spirituality, connection, and emotional safety. At nineteen, I moved to the UK through an arranged marriage, believing I was stepping into freedom.",
+      "visual_mood": "Warm, nostalgic, fading into shadow",
+      "background_emotion": "Hope transitioning to uncertainty"
+    },
+    {
+      "id": "shadow",
+      "title": "The Silence",
+      "content": "Instead, I entered years of control, silence, and abuse: physical, emotional, and psychological. Across two marriages and twenty-five years, I learned how deeply women can disappear while trying to keep the peace. I lived inside a silence shaped by cultural conditioning and the belief that endurance was strength.",
+      "visual_mood": "Dark, constricted, monochromatic",
+      "background_emotion": "Confinement and invisible struggle"
+    },
+    {
+      "id": "turning_point",
+      "title": "The Awakening",
+      "content": "In 2023, at fifty-one, I shattered the pattern. I chose myself. With the support of a mentor who offered emotional safety, I walked away from survival and came home to my truth. My pain became my strength. My silence became my mission.",
+      "visual_mood": "Breaking dawn, violet light, expansive",
+      "background_emotion": "Liberation and emergence"
+    }
+  ],
+  "philosophy_section": {
+    "headline": "This work is not about fixing you.",
+    "sub_headline": "It is about freeing you.",
+    "intro_text": "You are not broken. You are carrying what was never yours to hold — inherited beliefs, emotional imprints, and survival patterns that once kept you safe. I know this because I lived it. For decades, I moved through life in silence, strength, and self‑suppression — doing everything I was taught to do, yet feeling disconnected from my voice and worth.",
+    "key_points": [
+      "You are not broken.",
+      "You are carrying what was never yours to hold.",
+      "Insight alone doesn't create freedom; embodiment does."
+    ],
+    "closing_statement": "True transformation happens when the body feels safe enough to release what the mind has been carrying for years. That is the work I do."
+  },
+  "credentials": {
+    "intro": "My work combines lived experience with deep clinical study. I don't collect tools—I understand why insight alone doesn't create freedom.",
+    "list": [
+      "NLP Master Practitioner",
+      "Hypnotherapy & EFT",
+      "Timeline Therapy",
+      "Somatic Integration",
+      "Belief Recoding",
+      "Trauma-Informed Facilitation",
+      "Culturally Aware Practice"
+    ]
+  },
+  "why_different": {
+    "headline": "Why This Work Feels Different",
+    "points": [
+      {
+        "title": "Trauma-Informed",
+        "description": "Grounded in understanding the nervous system and what safety truly means"
+      },
+      {
+        "title": "Culturally Aware",
+        "description": "I honor the unique patterns of women from immigrant and collectivist backgrounds"
+      },
+      {
+        "title": "Deeply Integrative",
+        "description": "Healing moves beyond insight and becomes lived, grounded, and embodied"
+      },
+      {
+        "title": "For Real Change",
+        "description": "Not designed to help you cope—designed to help you become"
+      }
+    ]
+  },
+  "offerings": [
+    {
+      "title": "Soul Liberation Journey",
+      "subtitle": "Begin Choosing Yourself",
+      "duration": "6 Weeks",
+      "description": "A six-week initiation for women ready to return to their voice, boundaries, and inner truth. This journey is for those who have learned to stay quiet, agreeable, or invisible — and are now ready to live with self-respect and emotional safety. Guided with care, precision, and deep attunement, you'll begin releasing self-abandonment and reconnecting with your inner authority.",
+      "highlights": ["No fixing", "No forcing", "Just an honest beginning"]
+    },
+    {
+      "title": "Aattam",
+      "subtitle": "Come Home to Self",
+      "duration": "6 Months",
+      "description": "An embodied journey into liberation, identity, and self-leadership. Aattam is for women who know surface-level healing is no longer enough. This is a space for deep integration — where healing moves beyond insight and becomes lived, grounded, and embodied. Through long-term support and intentional guidance, you step into clarity, sovereignty, and self-trust.",
+      "highlights": ["Not a programme to consume", "A return to who you are", "Deep embodied transformation"]
+    }
+  ],
+  "call_to_action": {
+    "text": "If you're here, something in you already knows.",
+    "closing": "And when you're ready, I'm here to walk with you — honestly, safely, and with purpose.",
+    "button_label": "Walk Beside Me",
+    "button_href": "/free-clarity-call"
+  }
+}

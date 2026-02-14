@@ -3,8 +3,7 @@ export default function TermsAndConditionsPage() {
     <div className="min-h-screen bg-primary-800 pt-24 pb-12">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
+        <div className="absolute inset-0 opacity-[0.03] bg-grid-pattern" />
       </div>
 
       <div className="container-main relative z-10">

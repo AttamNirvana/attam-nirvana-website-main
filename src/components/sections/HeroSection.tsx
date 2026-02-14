@@ -1,7 +1,7 @@
 'use client'
 
 import Button from '@/components/ui/Button'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import LightRays from '@/components/effects/LightRays'
 
 // Animation variants for staggered text reveal
@@ -49,6 +49,8 @@ const fadeUpVariants = {
 }
 
 export default function HeroSection() {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
 
@@ -58,42 +60,37 @@ export default function HeroSection() {
           <div className="text-center">
             {/* Headline with staggered animation */}
             <motion.h1
-              variants={containerVariants}
+              variants={shouldReduceMotion ? {} : containerVariants}
               initial="hidden"
               animate="visible"
               className="font-poppins leading-[1.1] mb-8 sm:mb-10"
             >
               {/* Line 1 */}
               <motion.span 
-                variants={lineVariants}
+                variants={shouldReduceMotion ? {} : lineVariants}
                 className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3"
               >
-                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer" style={{backgroundSize: '200% auto'}}>Reclaim Your Inner Strength</span>
+                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer bg-size-200">Reclaim Your Inner Strength</span>
               </motion.span>
               
               {/* Line 2 */}
               <motion.span 
-                variants={lineVariants}
+                variants={shouldReduceMotion ? {} : lineVariants}
                 className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
               >
-                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer" style={{backgroundSize: '200% auto'}}>& Find Your True Self</span>
+                <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer bg-size-200">& Find Your True Self</span>
               </motion.span>
             </motion.h1>
 
             {/* Decorative line */}
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-[#ffd966] to-transparent mx-auto mb-8 sm:mb-10"
-            />
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#ffd966] to-transparent mx-auto mb-8 sm:mb-10" role="presentation" aria-hidden="true" />
 
             {/* Subheadline */}
             <motion.p
-              variants={fadeUpVariants}
+              variants={shouldReduceMotion ? {} : fadeUpVariants}
               initial="hidden"
               animate="visible"
-              transition={{ delay: 1.2 }}
+              transition={shouldReduceMotion ? {} : { delay: 1.2 }}
               className="text-base md:text-lg text-white/85 leading-relaxed mb-10 sm:mb-14 max-w-2xl mx-auto font-light"
             >
               A transformative journey designed to help women break free from trauma, 
@@ -103,99 +100,54 @@ export default function HeroSection() {
 
             {/* CTAs with enhanced styling */}
             <motion.div
-              variants={fadeUpVariants}
+              variants={shouldReduceMotion ? {} : fadeUpVariants}
               initial="hidden"
               animate="visible"
-              transition={{ delay: 1.4 }}
+              transition={shouldReduceMotion ? {} : { delay: 1.4 }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                animate={{ 
-                  y: [0, -5, 0],
-                  boxShadow: [
-                    '0 10px 30px rgba(184, 134, 11, 0.3)',
-                    '0 15px 40px rgba(184, 134, 11, 0.5)',
-                    '0 10px 30px rgba(184, 134, 11, 0.3)'
-                  ]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+              <Button 
+                href="/about" 
+                size="lg" 
+                variant="primary" 
+                className="group w-full sm:w-auto btn-shine bg-gradient-to-r from-[#b8860b] via-[#c99a1d] to-[#b8860b] hover:from-[#c99a1d] hover:via-[#b8860b] hover:to-[#c99a1d] text-white font-semibold shadow-lg transition-all duration-300 relative overflow-hidden"
               >
-                <Button 
-                  href="/about" 
-                  size="lg" 
-                  variant="primary" 
-                  className="group w-full sm:w-auto btn-shine bg-gradient-to-r from-[#b8860b] via-[#c99a1d] to-[#b8860b] hover:from-[#c99a1d] hover:via-[#b8860b] hover:to-[#c99a1d] text-white font-semibold shadow-lg transition-all duration-300 relative overflow-hidden"
-                >
-                  <span className="flex items-center gap-2 relative z-10">
-                    <span>Explore the Journey</span>
-                    <motion.span
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      →
-                    </motion.span>
+                <span className="flex items-center gap-2 relative z-10">
+                  <span>Explore the Journey</span>
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
                   </span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  />
-                </Button>
-              </motion.div>
+                </span>
+              </Button>
               
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                animate={{ 
-                  y: [0, -5, 0],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.3
-                }}
+              <Button 
+                href="/book-session" 
+                variant="outline" 
+                size="lg" 
+                className="w-full sm:w-auto border-2 border-[#b8860b] text-white bg-[#b8860b]/10 hover:bg-[#b8860b]/20 hover:border-[#c99a1d] backdrop-blur-sm transition-all duration-300 font-semibold shadow-lg shadow-[#b8860b]/20 relative overflow-hidden group"
               >
-                <Button 
-                  href="/book-session" 
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full sm:w-auto border-2 border-[#b8860b] text-white bg-[#b8860b]/10 hover:bg-[#b8860b]/20 hover:border-[#c99a1d] backdrop-blur-sm transition-all duration-300 font-semibold shadow-lg shadow-[#b8860b]/20 relative overflow-hidden group"
-                >
-                  <span className="relative z-10">Book a Session</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent"
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
-                  />
-                </Button>
-              </motion.div>
+                <span className="relative z-10">Book a Session</span>
+              </Button>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={shouldReduceMotion ? {} : { delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          animate={shouldReduceMotion ? {} : { y: [0, 10, 0] }}
+          transition={shouldReduceMotion ? {} : { duration: 1.5, repeat: Infinity }}
           className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
         >
           <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            animate={shouldReduceMotion ? {} : { y: [0, 12, 0] }}
+            transition={shouldReduceMotion ? {} : { duration: 1.5, repeat: Infinity }}
             className="w-1.5 h-3 bg-white/60 rounded-full mt-2"
           />
         </motion.div>

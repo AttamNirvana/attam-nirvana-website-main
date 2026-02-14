@@ -1,3 +1,6 @@
 export { default as Header } from './Header'
 export { default as Footer } from './Footer'
 export { default as LenisProvider } from './LenisProvider'
+export { default as CustomScrollbar } from './CustomScrollbar'
+export { default as SocialSidebar } from './SocialSidebar'
+export { default as Breadcrumbs } from './Breadcrumbs'

@@ -48,7 +48,7 @@ export default function SectionHeader({
           className={clsx(
             'section-subtitle',
             centered && 'mx-auto',
-            light ? 'text-light-text' : 'text-gray-600'
+            light ? 'text-white/90' : 'text-gray-600'
           )}
         >
           {subtitle}

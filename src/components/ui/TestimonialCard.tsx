@@ -57,7 +57,7 @@ export default function TestimonialCard({
       <blockquote
         className={clsx(
           'text-base leading-relaxed mb-6 italic',
-          featured ? 'text-light-text' : 'text-gray-600'
+          featured ? 'text-white/90' : 'text-gray-600'
         )}
       >
         &ldquo;{quote}&rdquo;

@@ -1,14 +1,49 @@
+import type { Metadata } from 'next'
+import ServicesContent from './ServicesContent'
+import { getAllServicesSchema, createJsonLd } from '@/lib/structuredData'
+
+export const metadata: Metadata = {
+  title: 'Life Coaching Services | Trauma Recovery Programs | Aattam Nirvana',
+  description: 'Discover personalized trauma healing and empowerment programs. From 12-week transformation to intensive coaching sessions. Online services via Zoom. Free clarity call available.',
+  keywords: [
+    'life coaching services',
+    'trauma recovery programs',
+    'women empowerment coaching',
+    'NLP coaching',
+    'hypnotherapy sessions',
+    'intensive coaching',
+    'transformation program',
+    '1-on-1 coaching',
+    'online life coaching',
+    'trauma healing services'
+  ],
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Life Coaching Services | Trauma Recovery Programs',
+    description: '12-week transformation program, intensive coaching sessions, and free clarity calls. Online trauma healing and women empowerment services.',
+    url: '/services',
+    type: 'website',
+  },
+}
+
 export default function ServicesPage() {
+  // Generate structured data for services
+  const servicesSchemas = getAllServicesSchema()
+
   return (
-    <div className="min-h-screen pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-18 md:pb-20">
-      <div className="container-main text-center">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold text-dark-text mb-3 sm:mb-4">
-          Our Services
-        </h1>
-        <p className="text-sm sm:text-base text-gray-600">
-          Coming Soon - Explore our healing programs and services.
-        </p>
-      </div>
-    </div>
+    <>
+      {/* JSON-LD Structured Data for Services */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd({
+          '@context': 'https://schema.org',
+          '@graph': servicesSchemas
+        })}
+      />
+      
+      <ServicesContent />
+    </>
   )
 }

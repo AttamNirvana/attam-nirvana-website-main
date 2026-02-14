@@ -59,9 +59,9 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center
                            transition-all duration-300 hover:bg-white hover:text-primary-700 hover:scale-110"
-                  aria-label={social.label}
+                  aria-label={`Visit Aattam Nirvana on ${social.label} (opens in new tab)`}
                 >
-                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -111,14 +111,14 @@ export default function Footer() {
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent-purple mt-0.5 flex-shrink-0" />
                 <a
                   href="mailto:connect@aattamnirvana.com"
-                  className="text-light-text text-xs sm:text-sm hover:text-white transition-colors break-all"
+                  className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors break-all"
                 >
                   connect@aattamnirvana.com
                 </a>
               </li>
               <li className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent-purple mt-0.5 flex-shrink-0" />
-                <span className="text-light-text text-xs sm:text-sm">
+                <span className="text-white/90 text-xs sm:text-sm">
                   Harrow HA3, UK<br />
                   Online Sessions Available
                 </span>
@@ -133,10 +133,10 @@ export default function Footer() {
         <div className="container-main py-4 sm:py-5 md:py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2 sm:gap-3 md:gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-              <p className="text-light-text text-xs sm:text-sm text-center md:text-left">
+              <p className="text-white/90 text-xs sm:text-sm text-center md:text-left">
                 © {new Date().getFullYear()} Aattam Nirvana. All rights reserved.
               </p>
-              <Link href="/terms-and-conditions" className="text-light-text text-xs sm:text-sm hover:text-white transition-colors">
+              <Link href="/terms-and-conditions" className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors">
                 Terms & Conditions
               </Link>
             </div>

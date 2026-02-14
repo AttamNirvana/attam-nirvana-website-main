@@ -1,4 +1,5 @@
 export { default as HeroSection } from './HeroSection'
+export { default as TraumaSymptomsSection } from './TraumaSymptomsSection'
 export { default as AboutPreviewSection } from './AboutPreviewSection'
 export { default as ServicesSection } from './ServicesSection'
 export { default as TestimonialsSection } from './TestimonialsSection'
