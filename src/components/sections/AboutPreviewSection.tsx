@@ -39,7 +39,7 @@ export default function AboutPreviewSection() {
             <p className="text-white/90 font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               The Story Behind Aattam
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] leading-tight whitespace-nowrap">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] leading-tight sm:whitespace-nowrap">
               From Silence to Self‑Liberation
             </h2>
             <p className="text-white font-poppins text-sm sm:text-base md:text-lg mt-3">
@@ -90,7 +90,7 @@ export default function AboutPreviewSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 rounded-2xl p-5 shadow-2xl border border-[#c99a1d]/30 backdrop-blur-sm max-w-[180px]"
+                className="absolute -bottom-6 -right-2 sm:-right-6 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 rounded-2xl p-4 sm:p-5 shadow-2xl border border-[#c99a1d]/30 backdrop-blur-sm max-w-[150px] sm:max-w-[180px]"
                 style={{
                   boxShadow: '0 10px 40px rgba(201, 154, 29, 0.15), 0 0 20px rgba(0, 0, 0, 0.3)'
                 }}

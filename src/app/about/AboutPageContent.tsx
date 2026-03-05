@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAboutData, AboutPageData } from '@/lib/aboutData';
 import { BreathingBackground } from '@/components/effects/BreathingBackground';
-import { AudioToggle } from '@/components/ui/AudioToggle';
 import { AboutHeroSection } from '@/components/sections/AboutHeroSection';
 import { NarrativeArcSection } from '@/components/sections/NarrativeArcSection';
 import { PhilosophySection } from '@/components/sections/PhilosophySection';
@@ -58,9 +57,6 @@ export default function AboutPageContent() {
     <div className="relative text-white bg-primary-700">
       {/* Breathing background with Light Rays */}
       <BreathingBackground />
-
-      {/* Audio toggle */}
-      <AudioToggle />
 
       {/* Main content wrapper */}
       <div className="relative z-10">

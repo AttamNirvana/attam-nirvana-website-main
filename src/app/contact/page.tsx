@@ -5,8 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { FadeInUp } from '@/components/animations'
 import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react'
 import { BreathingBackground } from '@/components/effects/BreathingBackground'
-import { AudioToggle } from '@/components/ui/AudioToggle'
-
 export default function ContactPage() {
   const shouldReduceMotion = useReducedMotion()
   const [formData, setFormData] = useState({
@@ -102,9 +100,6 @@ export default function ContactPage() {
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-[#ffd966]/5 to-[#6e1fd2]/5 rounded-full blur-3xl"
         />
       </div>
-
-      {/* Audio toggle */}
-      <AudioToggle />
 
       <div className="container-main relative z-10">
         <div className="max-w-6xl mx-auto">

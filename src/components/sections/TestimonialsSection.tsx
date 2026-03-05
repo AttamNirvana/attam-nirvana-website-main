@@ -125,7 +125,7 @@ export default function TestimonialsSection() {
 
                         {/* Quote Icon */}
                         <div className="mb-4">
-                          <Quote className="w-10 h-10 text-accent-purple/40" />
+                          <Quote className="w-10 h-10 text-[#c99a1d]" />
                         </div>
 
                         {/* Quote Text */}

@@ -1,7 +1,6 @@
 'use client'
 
 import { BreathingBackground } from '@/components/effects/BreathingBackground'
-import { AudioToggle } from '@/components/ui/AudioToggle'
 import CalendlyWidget from '@/components/CalendlyWidget'
 
 export default function BookSessionPage() {
@@ -9,9 +8,6 @@ export default function BookSessionPage() {
     <div className="relative min-h-screen bg-primary-700 pt-24 pb-12">
       {/* Breathing background with Light Rays */}
       <BreathingBackground />
-      
-      {/* Audio toggle */}
-      <AudioToggle />
       
       <div className="container-main relative z-10">
         <div className="max-w-5xl mx-auto">

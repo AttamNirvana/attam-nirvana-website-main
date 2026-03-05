@@ -27,8 +27,8 @@ export function AudioToggle() {
     if (!isMounted) return;
 
     if (!audioRef.current) {
-      audioRef.current = new Audio('/audio/healing-frequency.mp3');
-      audioRef.current.volume = 0.15; // 15% volume
+      audioRef.current = new Audio('/audio/calm-ambient.mp3');
+      audioRef.current.volume = 0.4; // 40% volume
       audioRef.current.loop = true;
     }
 
@@ -58,7 +58,7 @@ export function AudioToggle() {
       onClick={handleToggle}
       aria-label={isPlaying ? 'Turn off healing frequency' : 'Turn on healing frequency'}
       className={`
-        fixed top-6 right-6 z-50
+        fixed bottom-6 right-6 z-50
         w-12 h-12 rounded-full
         flex items-center justify-center
         transition-all duration-300

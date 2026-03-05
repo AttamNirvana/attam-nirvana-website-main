@@ -54,7 +54,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
 
-      <div className="container-main relative z-20 w-full py-12 sm:py-24">
+      <div className="container-main relative z-20 w-full pt-24 pb-12 sm:py-24">
         {/* Content - Centered */}
         <div className="flex justify-center items-center max-w-7xl mx-auto">
           <div className="text-center">

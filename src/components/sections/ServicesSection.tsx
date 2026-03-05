@@ -31,15 +31,7 @@ const services = [
     href: '/free-clarity-call',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=80',
-    title: 'Group Workshops',
-    description: 'Connect with a supportive community of women on similar healing journeys through facilitated group sessions.',
-    duration: '2 hours',
-    rating: 4.9,
-    href: '/contact',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80',
+    image: '/Values Workshop.png',
     title: 'Values Workshop',
     description: 'Discover and align with your core values to create a life of authenticity and purpose.',
     duration: '3 hours',
@@ -47,7 +39,15 @@ const services = [
     href: '/contact',
   },
   {
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=80',
+    image: '/Group Workshops.png',
+    title: 'Group Workshops',
+    description: 'Connect with a supportive community of women on similar healing journeys through facilitated group sessions.',
+    duration: '2 hours',
+    rating: 4.9,
+    href: '/contact',
+  },
+  {
+    image: '/Corporate.png',
     title: 'Corporate',
     description: 'Tailored wellness and empowerment programs for corporate teams to foster psychological safety and growth.',
     duration: 'Customizable',
@@ -76,13 +76,13 @@ export default function ServicesSection() {
                  Tailored Programs
               </h2>
             </div>
-            <div className="flex items-center gap-3 rounded-full bg-white/10 border border-white/15 px-2 py-2 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.2)]">
+            <div className="inline-flex items-center gap-1.5 sm:gap-3 rounded-full bg-white/10 border border-white/15 px-1.5 sm:px-2 py-1.5 sm:py-2 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.2)] w-auto">
               {['Programs', 'Workshops'].map((label, index) => (
                 <button
                   key={label}
                   type="button"
                   onClick={() => setPageIndex(index)}
-                  className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.22em] transition-all duration-300 border shadow-sm
+                  className={`whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.22em] transition-all duration-300 border shadow-sm
                     ${pageIndex === index
                       ? 'bg-gradient-to-r from-[#c99a1d] to-[#e0b84d] text-white border-transparent shadow-[0_0_18px_rgba(201,154,29,0.45)]'
                       : 'bg-white/5 text-white/80 border-white/25 hover:border-[#c99a1d]/60 hover:text-white hover:bg-white/10'
