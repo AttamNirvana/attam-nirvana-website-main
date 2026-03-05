@@ -239,7 +239,7 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 bg-primary-800/50 border border-[#6e1fd2]/40 rounded-lg 
                                text-white placeholder-white/40 focus:outline-none focus:border-[#ffd966]/60 focus:bg-primary-800/70
                                transition-all duration-300 hover:border-[#6e1fd2]/60 resize-none"
-                      placeholder="Tell us about your healing journey..."
+                      // no placeholder
                     />
                     {fieldErrors.message && (
                       <p id="message-error" className="mt-1 text-sm text-red-400" role="alert">

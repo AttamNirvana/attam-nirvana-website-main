@@ -17,13 +17,7 @@ const testimonials = [
     featured: true,
   },
   {
-    quote: "The Aattam program gave me the tools to understand my patterns and break free from them. Rupi's compassion and wisdom made me feel safe throughout my healing journey.",
-    author: 'Sarah Mitchell',
-    title: 'Trauma Healing Client',
-    rating: 5,
-  },
-  {
-    quote: "I came to Rupi feeling worthless after years of emotional abuse. Today, I run my own business and help other women. She showed me my power was never lost.",
+    quote: "I came to Rupi feeling worthless after years of emotional abuse. Today, I run my own business. She showed me my power was never lost.",
     author: 'Anita Patel',
     title: 'Workshop Attendee',
     rating: 5,
@@ -155,7 +149,7 @@ export default function TestimonialsSection() {
                             <p className="text-base font-poppins font-bold text-white">
                               {testimonial.author}
                             </p>
-                            <p className="text-sm text-accent-purple font-semibold">
+                            <p className="text-sm font-semibold" style={{ color: '#c99a1d' }}>
                               {testimonial.title}
                             </p>
                           </div>
@@ -219,7 +213,7 @@ export default function TestimonialsSection() {
                         <p className="font-poppins font-bold text-white text-xs">
                           {testimonial.author}
                         </p>
-                        <p className="text-xs text-accent-purple/90">
+                        <p className="text-xs font-semibold" style={{ color: '#c99a1d' }}>
                           {testimonial.title}
                         </p>
                       </div>

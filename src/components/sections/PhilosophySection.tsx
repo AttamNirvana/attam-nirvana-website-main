@@ -76,7 +76,7 @@ export function PhilosophySection({
           {/* Intro text */}
           <motion.p
             variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-12 font-inter"
+            className="text-sm sm:text-base md:text-lg text-white leading-relaxed mb-12 font-inter"
           >
             {intro_text}
           </motion.p>
@@ -98,7 +98,7 @@ export function PhilosophySection({
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="h-full p-6 sm:p-8 rounded-xl backdrop-blur-md bg-[#6e1fd2]/20 border border-[#6e1fd2]/60 hover:border-[#6e1fd2]/80 transition-all duration-300 hover:bg-[#6e1fd2]/30">
+              <div className="h-full p-6 sm:p-8 rounded-xl backdrop-blur-md bg-[#6e1fd2]/20 border border-[#6e1fd2]/60 hover:border-[#6e1fd2]/80 transition-all duration-300 hover:bg-[#6e1fd2]/30 relative z-20">
                 <p className="text-base sm:text-lg text-white font-poppins font-500 leading-relaxed">
                   {point}
                 </p>
@@ -115,7 +115,7 @@ export function PhilosophySection({
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter">
+          <p className="text-sm sm:text-base leading-relaxed font-inter text-white">
             {closing_statement}
           </p>
         </motion.div>

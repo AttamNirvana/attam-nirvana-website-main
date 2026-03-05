@@ -6,15 +6,7 @@ import Link from 'next/link'
 
 const services = [
   {
-    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&auto=format&fit=crop&q=80',
-    title: 'Trauma Healing',
-    description: 'One-on-one personalized sessions to help you process and heal from past trauma with compassionate guidance.',
-    duration: '60 mins',
-    rating: 5,
-    href: '/free-clarity-call',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=80',
+    image: '/soul-liberation-journey.jpeg',
     title: 'Soul Liberation Journey',
     description: 'A six-week initiation for women ready to return to their voice, boundaries, and inner truth. Begin choosing yourself.',
     duration: '6 weeks',
@@ -22,13 +14,21 @@ const services = [
     href: '/free-clarity-call',
   },
   {
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80',
+    image: '/Aattam.jpeg',
     title: 'Aattam',
     description: 'A six-month embodied journey into liberation, identity, and self-leadership. Come home to self. Not a programme to consume. A return to who you are.',
     duration: '6 months',
     rating: 5,
     href: '/free-clarity-call',
     featured: true,
+  },
+  {
+    image: '/Trauma Healing.jpeg',
+    title: 'Trauma Healing',
+    description: 'One-on-one personalized sessions to help you process and heal from past trauma with compassionate guidance.',
+    duration: '60 mins',
+    rating: 5,
+    href: '/free-clarity-call',
   },
   {
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=80',
@@ -73,7 +73,7 @@ export default function ServicesSection() {
                 Our Services
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#c99a1d] leading-tight">
-                Tailored Programs for Your Healing Journey
+                 Tailored Programs
               </h2>
             </div>
             <div className="flex items-center gap-3 rounded-full bg-white/10 border border-white/15 px-2 py-2 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.2)]">

@@ -51,7 +51,7 @@ export function OfferingsSectionNew({ offerings }: OfferingsSectionProps) {
           <h2 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 bg-clip-text text-transparent">
             Programs & Offerings
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-white text-sm sm:text-base max-w-2xl mx-auto">
             Choose the path that resonates with your readiness for transformation
           </p>
         </motion.div>
@@ -115,7 +115,7 @@ export function OfferingsSectionNew({ offerings }: OfferingsSectionProps) {
                     {offering.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#ffd966] flex-shrink-0" />
-                        <span className="text-xs sm:text-sm text-gray-400 font-inter">
+                        <span className="text-xs sm:text-sm text-white font-inter">
                           {highlight}
                         </span>
                       </li>
@@ -134,7 +134,7 @@ export function OfferingsSectionNew({ offerings }: OfferingsSectionProps) {
                       text-white text-sm sm:text-base font-poppins font-600
                       transition-all duration-300
                       group/btn
-                      cursor-default opacity-60
+                      cursor-default
                     `}
                   >
                     Learn More
