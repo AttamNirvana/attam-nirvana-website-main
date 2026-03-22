@@ -17,9 +17,14 @@ export function AudioToggle() {
   useEffect(() => {
     setIsMounted(true);
     const savedState = localStorage.getItem('audio-toggle-state');
-    if (savedState === 'true') {
+
+    // Autoplay by default for first-time visitors, but respect saved preference.
+    if (savedState === null) {
       setIsPlaying(true);
+      return;
     }
+
+    setIsPlaying(savedState === 'true');
   }, []);
 
   // Handle audio playback

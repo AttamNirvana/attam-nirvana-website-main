@@ -76,13 +76,13 @@ export default function ServicesSection() {
                  Tailored Programs
               </h2>
             </div>
-            <div className="inline-flex items-center gap-1.5 sm:gap-3 rounded-full bg-white/10 border border-white/15 px-1.5 sm:px-2 py-1.5 sm:py-2 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.2)] w-auto">
+            <div className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-white/10 border border-white/15 p-1 sm:p-1.5 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.2)] w-full sm:w-auto max-w-[360px]">
               {['Programs', 'Workshops'].map((label, index) => (
                 <button
                   key={label}
                   type="button"
                   onClick={() => setPageIndex(index)}
-                  className={`whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.22em] transition-all duration-300 border shadow-sm
+                  className={`whitespace-nowrap flex-1 sm:flex-none min-w-[128px] px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.08em] sm:tracking-[0.16em] transition-all duration-300 border shadow-sm text-center
                     ${pageIndex === index
                       ? 'bg-gradient-to-r from-[#c99a1d] to-[#e0b84d] text-white border-transparent shadow-[0_0_18px_rgba(201,154,29,0.45)]'
                       : 'bg-white/5 text-white/80 border-white/25 hover:border-[#c99a1d]/60 hover:text-white hover:bg-white/10'
