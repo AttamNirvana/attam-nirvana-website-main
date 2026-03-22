@@ -27,27 +27,27 @@ const testimonials = [
 const faqs = [
   {
     question: "I've spent years trying to \"fix\" myself. Is this another form of self-improvement work?",
-    answer: "No. This work is not about fixing you — it's about freeing you.\n\nYou are not broken. What you're carrying may not even be yours — inherited beliefs, emotional imprints, survival patterns that once kept you safe. For decades, I lived in silence and self-suppression, believing endurance was strength. At 51, I chose something different — not because it was easy, but because staying the same was no longer possible.\n\nThis work begins from that understanding."
+    answer: "No. This work is not about fixing you — **it's about freeing you.**\n\nYou are not broken. What you're carrying may not even be yours — inherited beliefs, emotional imprints, survival patterns that once kept you safe. For decades, I lived in silence and self-suppression, believing endurance was strength. At 51, I chose something different — not because it was easy, but because staying the same was no longer possible.\n\nThis work begins from that understanding."
   },
   {
     question: "What makes your approach different from traditional therapy or coaching?",
-    answer: "I don't offer surface change. I guide identity-level transformation.\n\nI trained across trauma-informed modalities — NLP, hypnotherapy, EFT, timeline therapy, belief recoding, somatic integration — not to collect techniques, but to understand why insight alone doesn't create freedom.\n\nReal transformation happens when the body feels safe enough to release what the mind has been carrying for years. That is the level at which we work."
+    answer: "I don't offer surface change. I guide identity-level transformation.\n\nI upgraded my lived experience by training across various modalities- NLP, Hypnosis, Somatic Integration, Timeline Therapy, Human & Emotional Change Therapy, Neuroscience\n\n**Real transformation happens when the body feels safe enough to release what the mind has been carrying for years. That is the level at which we work**"
   },
   {
     question: "Do I have to keep \"healing\" forever? I feel exhausted by it.",
-    answer: "No. This is not about endless healing.\n\nIt's about becoming who you were always meant to be.\n\nI support women who are capable and deeply self-aware — yet still feel held back by patterns they cannot think their way out of. Together, we release what no longer serves you, reclaim your voice and authority, and step into a version of you that no longer abandons herself."
+    answer: "No. This is not about endless healing.\n\n**It's about becoming who you were always meant to be.**\n\nI support women who are capable and deeply self-aware — yet still feel held back by patterns they cannot think their way out of. Together, we release what no longer serves you, reclaim your voice and authority, and step into a version of you that no longer abandons herself."
   },
   {
     question: "How will I know if this work is right for me?",
-    answer: "Many approaches help you cope. This work helps you become.\n\nIt is trauma-informed, culturally aware, and deeply integrative — designed for women who are ready for real change, not just understanding.\n\nIf you're here, something in you already knows. And when you're ready, I'm here to walk with you — honestly, safely, and with purpose."
+    answer: "Many approaches help you cope. This work helps you become.\n\nIt is trauma-informed, culturally aware, and deeply integrative — designed for women who are ready for real change, not just understanding.\n\nIf you're here, something in you already knows. And when you're ready, I'm here to walk with you — **honestly, safely, and with purpose.**"
   },
   {
-    question: "What is the six-week \"Begin Choosing Yourself\" journey about?",
-    answer: "This six-week initiation is for women ready to return to their voice, boundaries, and inner truth.\n\nIt's for those who learned to stay quiet, agreeable, or invisible — and are now ready to live with self-respect and emotional safety. With care, precision, and deep attunement, we begin releasing self-abandonment and reconnecting with your inner authority.\n\nNo fixing. No forcing. Just an honest beginning."
+    question: "Begin Choosing Yourself to \"Soul Liberation Journey\".",
+    answer: "This six-week initiation is for women ready to return to their voice, boundaries, and inner truth.\n\nIt's for those who learned to stay quiet, agreeable, or invisible — and are now ready to live with self-respect and emotional safety. With care, precision, and deep attunement, we begin releasing self-abandonment and reconnecting with your inner authority.\n\n**No fixing. No forcing. Just an honest beginning.**"
   },
   {
     question: "What is Aattam, and how is it different from shorter programs?",
-    answer: "Aattam is a six-month embodied journey into liberation, identity, and self-leadership.\n\nIt is for women who know surface-level healing is no longer enough. This is long-term integration — where healing moves beyond insight and becomes lived, grounded, and embodied. Through intentional guidance and sustained support, you step into clarity, sovereignty, and self-trust.\n\nNot a programme to consume. A return to who you are."
+    answer: "AattamNirvana, a 6-month embodied journey, where healing and self-mastery go beyond mere insight. It is for women who feel surface-level healing is not enough for them. They seek knowledge and wisdom to understand patterns, develop emotional mastery, practice self-leadership, cultivate inner harmony, and become fully lived, grounded, and embodied.\n\n**It's not a programme to consume. It is a return to your Soul's Inner Light.**"
   }
 ]
 

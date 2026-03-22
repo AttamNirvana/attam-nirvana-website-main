@@ -56,9 +56,35 @@ export default function FAQItem({ question, answer, index, delay = 0 }: FAQItemP
             className="overflow-hidden"
           >
             <div className="px-5 sm:px-6 pt-4 pb-5">
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed whitespace-pre-line">
-                {answer}
-              </p>
+              <div className="space-y-4">
+                {answer.split('\n\n').map((paragraph, paragraphIndex) => {
+                  const isBold = paragraph.startsWith('**') && paragraph.endsWith('**')
+                  const content = isBold ? paragraph.slice(2, -2) : paragraph
+                  const chunks = content.split(/(\*\*[^*]+\*\*)/g)
+
+                  return (
+                    <p
+                      key={paragraphIndex}
+                      className={`text-sm sm:text-base leading-relaxed whitespace-pre-line ${
+                        isBold ? 'text-white font-bold' : 'text-white/80'
+                      }`}
+                    >
+                      {chunks.map((chunk, chunkIndex) => {
+                        const isInlineBold = !isBold && chunk.startsWith('**') && chunk.endsWith('**')
+                        const chunkContent = isInlineBold ? chunk.slice(2, -2) : chunk
+
+                        return isInlineBold ? (
+                          <strong key={chunkIndex} className="text-white font-bold">
+                            {chunkContent}
+                          </strong>
+                        ) : (
+                          <span key={chunkIndex}>{chunkContent}</span>
+                        )
+                      })}
+                    </p>
+                  )
+                })}
+              </div>
             </div>
           </motion.div>
         )}
