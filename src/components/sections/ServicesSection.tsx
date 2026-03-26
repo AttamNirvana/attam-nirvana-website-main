@@ -7,7 +7,7 @@ import Link from 'next/link'
 const services = [
   {
     image: '/soul-liberation-journey.jpeg',
-    title: 'Soul Liberation Journey',
+    title: 'Soul Liberation Journey.',
     description: 'A six-week initiation for women ready to return to their voice, boundaries, and inner truth. Begin choosing yourself.',
     duration: '6 weeks',
     rating: 5,

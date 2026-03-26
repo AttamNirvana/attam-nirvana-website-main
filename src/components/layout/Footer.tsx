@@ -111,6 +111,9 @@ export default function Footer() {
               <p className="text-white/90 text-xs sm:text-sm text-center md:text-left">
                 © {new Date().getFullYear()} Aattam Nirvana. All rights reserved.
               </p>
+              <Link href="/privacy-policy" className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
               <Link href="/terms-and-conditions" className="text-white/90 text-xs sm:text-sm hover:text-white transition-colors">
                 Terms & Conditions
               </Link>

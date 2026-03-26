@@ -42,7 +42,7 @@ const faqs = [
     answer: "Many approaches help you cope. This work helps you become.\n\nIt is trauma-informed, culturally aware, and deeply integrative — designed for women who are ready for real change, not just understanding.\n\nIf you're here, something in you already knows. And when you're ready, I'm here to walk with you — **honestly, safely, and with purpose.**"
   },
   {
-    question: "Begin Choosing Yourself to \"Soul Liberation Journey\".",
+    question: "Soul Liberation Journey.",
     answer: "This six-week initiation is for women ready to return to their voice, boundaries, and inner truth.\n\nIt's for those who learned to stay quiet, agreeable, or invisible — and are now ready to live with self-respect and emotional safety. With care, precision, and deep attunement, we begin releasing self-abandonment and reconnecting with your inner authority.\n\n**No fixing. No forcing. Just an honest beginning.**"
   },
   {

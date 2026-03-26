@@ -129,7 +129,7 @@ export default function AboutPreviewSection() {
                 <div>
                   <p className="text-xl sm:text-2xl md:text-3xl font-poppins font-bold">
                     <ShinyText 
-                      text="Rupi Dhillon" 
+                      text="Rupinder Dhillon" 
                       color="#ffffff"
                       shineColor="#e0b84d"
                       speed={3.5}
