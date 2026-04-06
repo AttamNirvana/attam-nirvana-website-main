@@ -20,6 +20,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
+  optimizeFonts: false,
   async headers() {
     return [
       {
