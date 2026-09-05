@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Sparkles, Heart, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import logoImg from '@/assets/favicon.png'
+import EventFooterLink from '@/components/event/EventFooterLink'
 
 const footerLinks = {
   quickLinks: [
@@ -13,7 +14,7 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { href: 'https://www.instagram.com/aattamnirvana', icon: Instagram, label: 'Instagram' },
+  { href: 'https://www.instagram.com/rupinder.aattamnirvana?igsi=enQ1YWI0YWV5NGVp', icon: Instagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/in/rupi-dhillon-traumaliberator-transformationinterventionist-heart-ledfacilitator/', icon: Linkedin, label: 'LinkedIn' },
 ]
 
@@ -75,6 +76,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <EventFooterLink />
             </ul>
           </div>
 

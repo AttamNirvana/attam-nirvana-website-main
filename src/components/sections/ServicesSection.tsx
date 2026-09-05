@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Sparkles, ArrowRight, Star } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const services = [
@@ -112,10 +113,12 @@ export default function ServicesSection() {
 
                     {/* Image */}
                     <div className="relative h-44 overflow-hidden">
-                      <img
+                      <Image
                         src={service.image}
                         alt={service.title}
-                        className="absolute inset-0 w-full h-full object-cover brightness-105"
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover brightness-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                       <div className="absolute top-0 left-0 w-12 h-12 bg-gradient-to-br from-[#c99a1d]/10 to-transparent" />

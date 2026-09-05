@@ -6,8 +6,9 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles } from 'lucide-react'
 import logoImg from '@/assets/favicon.png'
+import { EVENT_PATH, isEventPromotable } from '@/lib/eventConfig'
 
-const navLinks = [
+const baseNavLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/free-clarity-call', label: 'Free Clarity Call' },
@@ -18,6 +19,17 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  // Starts false on both server and initial client render (avoids a
+  // hydration mismatch), then flips on after mount if the event is still
+  // promotable - so the link disappears on its own once it ends, with no
+  // redeploy needed.
+  const [showEventLink, setShowEventLink] = useState(false)
+  useEffect(() => {
+    setShowEventLink(isEventPromotable())
+  }, [])
+  const navLinks = showEventLink
+    ? [...baseNavLinks, { href: EVENT_PATH, label: 'Free Event' }]
+    : baseNavLinks
 
   useEffect(() => {
     const handleScroll = () => {

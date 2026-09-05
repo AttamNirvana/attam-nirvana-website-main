@@ -1,13 +1,29 @@
 import type { Metadata } from 'next'
+import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { Header, Footer, LenisProvider } from '@/components/layout'
 import CustomScrollbar from '@/components/layout/CustomScrollbar'
 import SocialSidebar from '@/components/layout/SocialSidebar'
 import CookieConsent from '@/components/layout/CookieConsent'
+import EventAnnouncementModal from '@/components/event/EventAnnouncementModal'
 import Analytics from '@/components/Analytics'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.attamnirvana.com'),
@@ -16,10 +32,6 @@ export const metadata: Metadata = {
     template: '%s | Aattam Nirvana'
   },
   description: 'Transform your life with Rupi Dhillon. A 12-week program to break free from trauma, domestic abuse, and cultural conditioning. Reclaim your voice and inner strength.',
-  keywords: ['trauma healing', 'domestic abuse recovery', 'women empowerment', 'life coaching', 'Rupi Dhillon', 'Aattam Nirvana'],
-  alternates: {
-    canonical: '/',
-  },
   authors: [{ name: 'Rupi Dhillon' }],
   creator: 'Rupi Dhillon',
   publisher: 'Aattam Nirvana',
@@ -55,17 +67,6 @@ export const metadata: Metadata = {
     description: 'Break free from trauma and reclaim your authentic self with personalized guidance.',
     images: ['/og-image.jpg'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
 export default function RootLayout({
@@ -74,15 +75,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#7c3aed" />
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-inter" suppressHydrationWarning>
         <Analytics />
@@ -94,6 +92,7 @@ export default function RootLayout({
           <Footer />
           <AudioToggle />
           <CookieConsent />
+          <EventAnnouncementModal />
         </LenisProvider>
         <VercelAnalytics />
         <SpeedInsights />

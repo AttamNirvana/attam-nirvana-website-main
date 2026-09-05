@@ -5,7 +5,7 @@ import { Instagram, Linkedin } from 'lucide-react'
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/aattamnirvana',
+    href: 'https://www.instagram.com/rupinder.aattamnirvana?igsi=enQ1YWI0YWV5NGVp',
     Icon: Instagram,
   },
   {

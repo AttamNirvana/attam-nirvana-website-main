@@ -27,27 +27,53 @@ export function AudioToggle() {
     setIsPlaying(savedState === 'true');
   }, []);
 
-  // Handle audio playback
+  // Handle audio playback. Creating the Audio element (and its network
+  // fetch) is deferred to idle time so it never competes with the page's
+  // LCP resources on first paint.
   useEffect(() => {
     if (!isMounted) return;
 
-    if (!audioRef.current) {
-      audioRef.current = new Audio('/audio/calm-ambient.mp3');
-      audioRef.current.volume = 0.4; // 40% volume
-      audioRef.current.loop = true;
+    localStorage.setItem('audio-toggle-state', isPlaying.toString());
+
+    if (!isPlaying) {
+      audioRef.current?.pause();
+      return;
     }
 
-    if (isPlaying) {
+    let cancelled = false;
+
+    const start = () => {
+      if (cancelled) return;
+      if (!audioRef.current) {
+        audioRef.current = new Audio('/audio/calm-ambient.mp3');
+        audioRef.current.volume = 0.4; // 40% volume
+        audioRef.current.loop = true;
+      }
       audioRef.current.play().catch((err) => {
         console.warn('Audio playback failed:', err);
         setIsPlaying(false);
       });
-    } else {
-      audioRef.current.pause();
+    };
+
+    if (audioRef.current) {
+      // Already loaded once - resume immediately, no need to defer.
+      start();
+      return;
     }
 
-    // Save state to localStorage
-    localStorage.setItem('audio-toggle-state', isPlaying.toString());
+    const idleId =
+      typeof window.requestIdleCallback === 'function'
+        ? window.requestIdleCallback(start, { timeout: 2000 })
+        : window.setTimeout(start, 1200);
+
+    return () => {
+      cancelled = true;
+      if (typeof window.requestIdleCallback === 'function') {
+        window.cancelIdleCallback(idleId as number);
+      } else {
+        window.clearTimeout(idleId as number);
+      }
+    };
   }, [isPlaying, isMounted]);
 
   const handleToggle = () => {
