@@ -63,6 +63,7 @@ export default function AboutPreviewSection() {
                   src={profileImg}
                   alt="Rupi Dhillon"
                   fill
+                  sizes="(max-width: 640px) 70vw, 320px"
                   className="object-cover"
                 />
                 {/* Subtle gradient overlay */}

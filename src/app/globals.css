@@ -213,6 +213,54 @@
   .animate-shimmer {
     animation: shimmer 4s linear infinite;
   }
+
+  /* Hero headline blur-in reveal - pure CSS so it paints on stylesheet
+     load instead of waiting on React hydration (keeps LCP fast). */
+  @keyframes hero-line-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+    }
+  }
+
+  .hero-line-reveal {
+    animation: hero-line-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  /* Attention ring + icon pulse for the event quick-access icon */
+  @keyframes ping-slow {
+    0% {
+      transform: scale(1);
+      opacity: 0.65;
+    }
+    75%, 100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes icon-pulse {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.15) rotate(8deg);
+    }
+  }
+
+  .animate-icon-pulse {
+    animation: icon-pulse 2.2s ease-in-out infinite;
+  }
   
   /* Text glow effect */
   .text-glow {

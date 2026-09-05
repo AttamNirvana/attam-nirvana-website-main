@@ -4,35 +4,6 @@ import Button from '@/components/ui/Button'
 import { motion, useReducedMotion } from 'framer-motion'
 import LightRays from '@/components/effects/LightRays'
 
-// Animation variants for staggered text reveal
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-}
-
-const lineVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30,
-    filter: 'blur(10px)',
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    filter: 'blur(0px)',
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-}
-
 const fadeUpVariants = {
   hidden: { 
     opacity: 0, 
@@ -58,29 +29,27 @@ export default function HeroSection() {
         {/* Content - Centered */}
         <div className="flex justify-center items-center max-w-7xl mx-auto">
           <div className="text-center">
-            {/* Headline with staggered animation */}
-            <motion.h1
-              variants={shouldReduceMotion ? {} : containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="font-poppins leading-[1.1] mb-8 sm:mb-10"
-            >
+            {/* Headline - blur-in reveal runs as a pure CSS animation (not
+                gated behind React hydration/Framer Motion), so it paints as
+                soon as the stylesheet loads instead of waiting on JS. Keeps
+                the same blur-in look at a fraction of the LCP delay. */}
+            <h1 className="font-poppins leading-[1.1] mb-8 sm:mb-10">
               {/* Line 1 */}
-              <motion.span 
-                variants={shouldReduceMotion ? {} : lineVariants}
-                className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3"
+              <span
+                className="hero-line-reveal block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3"
+                style={{ animationDelay: '0.15s' }}
               >
                 <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer bg-size-200">Reclaim Your Inner Strength</span>
-              </motion.span>
-              
+              </span>
+
               {/* Line 2 */}
-              <motion.span 
-                variants={shouldReduceMotion ? {} : lineVariants}
-                className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+              <span
+                className="hero-line-reveal block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+                style={{ animationDelay: '0.3s' }}
               >
                 <span className="bg-gradient-to-r from-[#ffd966] via-[#ffecb3] to-[#ffd966] bg-clip-text text-transparent animate-shimmer bg-size-200">& Find Your True Self</span>
-              </motion.span>
-            </motion.h1>
+              </span>
+            </h1>
 
             {/* Decorative line */}
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#ffd966] to-transparent mx-auto mb-8 sm:mb-10" role="presentation" aria-hidden="true" />

@@ -39,9 +39,11 @@ export default function SocialSidebar() {
               href={EVENT_PATH}
               aria-label="A Journey Home to Self - free live event"
               title="A Journey Home to Self - free live event"
-              className="w-10 h-10 rounded-xl bg-[#ffd966]/10 border border-[#ffd966]/40 flex items-center justify-center transition-all duration-300 hover:border-[#ffd966] hover:bg-[#ffd966]/20 hover:-translate-y-0.5"
+              className="relative w-10 h-10 rounded-xl bg-[#ffd966]/10 border border-[#ffd966]/40 flex items-center justify-center transition-all duration-300 hover:border-[#ffd966] hover:bg-[#ffd966]/20 hover:-translate-y-0.5"
             >
-              <Sparkles className="w-5 h-5 text-[#ffd966]" />
+              <span className="absolute inset-0 rounded-xl bg-[#ffd966]/50 animate-ping-slow" aria-hidden="true" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#ff5c5c] border-2 border-primary-950 animate-pulse" aria-hidden="true" />
+              <Sparkles className="relative w-5 h-5 text-[#ffd966] animate-icon-pulse" />
             </Link>
           )}
           {socialLinks.map(({ label, href, Icon }) => (
