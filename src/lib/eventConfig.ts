@@ -19,8 +19,8 @@ export const EVENT_EVENINGS = [
 ] as const
 
 export const EVENT_START = new Date('2026-09-18T19:30:00+01:00')
-export const EVENT_END = new Date('2026-09-20T22:00:00+01:00')
-export const EVENT_TIME_LABEL = '7:30–10:00 PM UK'
+export const EVENT_END = new Date('2026-09-20T21:00:00+01:00')
+export const EVENT_TIME_LABEL = '7:30–9:00 PM UK'
 
 export const JOTFORM_FORM_ID = '262467774474067'
 export const JOTFORM_EMBED_URL = `https://form.jotform.com/${JOTFORM_FORM_ID}`
@@ -35,10 +35,10 @@ export function isEventPromotable(now: Date = new Date()): boolean {
   return now.getTime() < EVENT_END.getTime()
 }
 
-/** Google Calendar "add event" link for one evening (7:30-10:00 PM UK). */
+/** Google Calendar "add event" link for one evening (7:30-9:00 PM UK). */
 export function googleCalendarUrl(dateISO: string): string {
   const start = new Date(`${dateISO}T19:30:00+01:00`)
-  const end = new Date(`${dateISO}T22:00:00+01:00`)
+  const end = new Date(`${dateISO}T21:00:00+01:00`)
   const fmt = (d: Date) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
   const params = new URLSearchParams({
     action: 'TEMPLATE',

@@ -9,7 +9,7 @@ import { EVENT_REGISTER_PATH, EVENT_TIME_LABEL } from '@/lib/eventConfig'
 export const metadata: Metadata = {
   title: 'A Journey Home to Self | Free 3-Day Live Event',
   description:
-    'A free 3-day immersion for women ready to come back to themselves. 18-20 September 2026, 7:30-10:00 PM UK, live on Zoom with Rupi Dhillon.',
+    'A free 3-day immersion for women ready to come back to themselves. 18-20 September 2026, 7:30-9:00 PM UK, live on Zoom with Rupi Dhillon.',
   openGraph: {
     title: 'A Journey Home to Self | Free 3-Day Live Event',
     description:
