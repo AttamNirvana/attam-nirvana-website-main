@@ -4,9 +4,9 @@ import EventHero from '@/components/sections/event/EventHero'
 import EventForYou from '@/components/sections/event/EventForYou'
 import EventExperience from '@/components/sections/event/EventExperience'
 import EventSchedule from '@/components/sections/event/EventSchedule'
-import { EVENT_REGISTER_PATH, EVENT_TIME_LABEL } from '@/lib/eventConfig'
+import { EVENT_ENABLED, EVENT_REGISTER_PATH, EVENT_TIME_LABEL } from '@/lib/eventConfig'
 
-export const metadata: Metadata = {
+const eventMetadata: Metadata = {
   title: 'A Journey Home to Self | Free 3-Evening Live Event',
   description:
     'A free 3-evening immersion for women ready to come back to themselves. 18-20 September 2026, 7:30-9:00 PM UK, live on Zoom with Rupi Dhillon.',
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
 }
+
+// Keeps the event name out of tab titles/search results while the event is hidden.
+export const metadata: Metadata = EVENT_ENABLED
+  ? eventMetadata
+  : { robots: { index: false, follow: false } }
 
 export default function JourneyHomeToSelfPage() {
   return (

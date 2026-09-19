@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { CalendarPlus, Video } from 'lucide-react'
 import {
+  EVENT_ENABLED,
   EVENT_EVENINGS,
   EVENT_TIME_LABEL,
   ZOOM_JOIN_URL,
@@ -9,11 +10,16 @@ import {
   googleCalendarUrl,
 } from '@/lib/eventConfig'
 
-export const metadata: Metadata = {
+const eventMetadata: Metadata = {
   title: "You're In | A Journey Home to Self",
   description: 'Your place is reserved for A Journey Home to Self.',
   robots: { index: false, follow: false },
 }
+
+// Keeps the event name out of tab titles/search results while the event is hidden.
+export const metadata: Metadata = EVENT_ENABLED
+  ? eventMetadata
+  : { robots: { index: false, follow: false } }
 
 export default function ConfirmedPage() {
   return (

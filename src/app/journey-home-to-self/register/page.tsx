@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
 import RegistrationEmbed from '@/components/event/RegistrationEmbed'
-import { EVENT_TIME_LABEL } from '@/lib/eventConfig'
+import { EVENT_ENABLED, EVENT_TIME_LABEL } from '@/lib/eventConfig'
 
-export const metadata: Metadata = {
+const eventMetadata: Metadata = {
   title: 'Reserve Your Free Spot | A Journey Home to Self',
   description: 'Register for the free 3-evening live event, A Journey Home to Self, 18-20 September 2026 on Zoom.',
 }
+
+// Keeps the event name out of tab titles/search results while the event is hidden.
+export const metadata: Metadata = EVENT_ENABLED
+  ? eventMetadata
+  : { robots: { index: false, follow: false } }
 
 export default function RegisterPage() {
   return (

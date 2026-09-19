@@ -4,6 +4,13 @@
  * reads from here so nothing has to be manually turned off after the event.
  */
 
+/**
+ * MASTER SWITCH. false = the event is hidden everywhere on the site (popup,
+ * homepage teaser, header/footer/sidebar links) and its pages return 404.
+ * All event code is kept intact - set to true to bring it all back.
+ */
+export const EVENT_ENABLED = false
+
 export const EVENT_SLUG = 'journey-home-to-self'
 export const EVENT_PATH = `/${EVENT_SLUG}`
 export const EVENT_REGISTER_PATH = `${EVENT_PATH}/register`
@@ -32,6 +39,7 @@ export const ZOOM_PASSCODE = 'INFINITE'
 
 /** True from now until the last evening ends - drives the popup/ribbon/nav link. */
 export function isEventPromotable(now: Date = new Date()): boolean {
+  if (!EVENT_ENABLED) return false
   return now.getTime() < EVENT_END.getTime()
 }
 
